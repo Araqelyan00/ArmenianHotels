@@ -65,6 +65,15 @@ public class ArmenianHotel {
         this.rooms = rooms;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "Name='" + name + '\'' +
+                ", Address='" + address + '\'' +
+                ", Phone='" + phone + '\'' +
+                ", Email='" + email + '\'' +
+                ", Rooms=" + rooms +
+                ", Stars=" + stars +
+                '}';
+    }
 }

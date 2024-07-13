@@ -9,10 +9,10 @@ public interface Menu {
     int PRINT_HOTELS_BY_ADDRESS = 4;
 
     int ADD_NEW_HOTEL = 5;
-    int DELETE_HOTEL = 6;
+    int DELETE_HOTEL_BY_NAME = 6;
     int RESERVE_ROOM = 7;
     int RELEASE_ROOM = 8;
-    int PRINT_AVAILABLE_ROOMS_LIST = 9;
+    int PRINT_ROOM_TYPES = 9;
     int PRINT_AVAILABLE_ROOMS_BY_TYPE = 10;
     int LOGIN_AS_ADMIN = 99;
 
@@ -34,10 +34,10 @@ public interface Menu {
         System.out.println("Input " + PRINT_HOTELS_BY_ADDRESS + " to print hotels by address");
         System.out.println("Input " + LOGIN_AS_ADMIN + " to login as admin");
         System.out.println("Input " + ADD_NEW_HOTEL + " to add new hotel");
-        System.out.println("Input " + DELETE_HOTEL + " to delete hotel");
+        System.out.println("Input " + DELETE_HOTEL_BY_NAME + " to delete hotel by name");
         System.out.println("Input " + RESERVE_ROOM + " to reserve room");
         System.out.println("Input " + RELEASE_ROOM + " to release room");
-        System.out.println("Input " + PRINT_AVAILABLE_ROOMS_LIST + " to print available rooms");
+        System.out.println("Input " + PRINT_ROOM_TYPES + " to print available rooms");
         System.out.println("Input " + PRINT_AVAILABLE_ROOMS_BY_TYPE + " to print available rooms by type");
         System.out.println("Enter command: ");
     }

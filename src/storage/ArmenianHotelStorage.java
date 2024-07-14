@@ -10,7 +10,7 @@ public class ArmenianHotelStorage {
     private static int size = 0;
 
     public static void add(ArmenianHotel armenianHotel) {
-        if(armenianHotels.length == size){
+        if (armenianHotels.length == size) {
             extend();
         }
         armenianHotels[size++] = armenianHotel;
@@ -33,7 +33,7 @@ public class ArmenianHotelStorage {
         System.out.println("Hotel deleted successfully");
     }
 
-    public void printAllHotels(){
+    public void printAllHotels() {
         for (int i = 0; i < armenianHotels.length; i++) {
             if (armenianHotels[i] != null) {
                 System.out.println(armenianHotels[i].toString());
@@ -45,7 +45,7 @@ public class ArmenianHotelStorage {
         for (int i = 0; i < armenianHotels.length; i++) {
             if (!name.equals(armenianHotels[i].getName())) {
                 throw new HotelNotFoundException("Hotel with name " + name + " not found");
-            } else if (name.equals(armenianHotels[i].getName())) {
+            } else {
                 System.out.println(armenianHotels[i].toString());
             }
         }
@@ -55,7 +55,7 @@ public class ArmenianHotelStorage {
         for (int i = 0; i < armenianHotels.length; i++) {
             if (!(armenianHotels[i].getStars() == starsCount)) {
                 throw new HotelNotFoundException("Hotel with " + starsCount + " stars not found");
-            } else if(armenianHotels[i].getStars() == starsCount){
+            } else {
                 System.out.println(armenianHotels[i].toString());
             }
         }
@@ -65,7 +65,7 @@ public class ArmenianHotelStorage {
         for (int i = 0; i < armenianHotels.length; i++) {
             if (!(address.equals(armenianHotels[i].getName()))) {
                 throw new HotelNotFoundException("Hotel with address " + address + " not found");
-            } else if(address.equals(armenianHotels[i].getAddress())){
+            } else if (address.equals(armenianHotels[i].getAddress())) {
                 System.out.println(armenianHotels[i].toString());
             }
         }

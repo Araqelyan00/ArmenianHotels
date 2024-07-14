@@ -6,13 +6,15 @@ public class User {
     private int age;
     private String email;
     private String phoneNumber;
+    private boolean haveReservedRoom;
 
-    public User(String name, String surname, int age, String email, String phoneNumber) {
+    public User(String name, String surname, int age, String email, String phoneNumber, boolean haveReservedRoom) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.haveReservedRoom = false;
     }
 
     public String getName() {
@@ -53,5 +55,13 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public boolean isHaveReservedRoom() {
+        return haveReservedRoom;
+    }
+
+    public void setHaveReservedRoom(boolean haveReservedRoom) {
+        this.haveReservedRoom = haveReservedRoom;
     }
 }

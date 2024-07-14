@@ -16,7 +16,7 @@ public interface Menu {
     int PRINT_AVAILABLE_ROOMS_BY_TYPE = 10;
     int LOGIN_AS_ADMIN = 99;
 
-    static void printUserCommands(){
+    static void printUserCommands() {
         System.out.println("Input " + EXIT + " to exit");
         System.out.println("Input " + PRINT_ALL_HOTELS + " to print all hotels");
         System.out.println("Input " + PRINT_HOTEL_BY_NAME + " to print hotel by name");
@@ -26,7 +26,7 @@ public interface Menu {
         System.out.println("Enter command: ");
     }
 
-    static void printAdminCommands(){
+    static void printAdminCommands() {
         System.out.println("Input " + EXIT + " to exit");
         System.out.println("Input " + PRINT_ALL_HOTELS + " to print all hotels");
         System.out.println("Input " + PRINT_HOTEL_BY_NAME + " to print hotel by name");

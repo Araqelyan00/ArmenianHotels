@@ -7,6 +7,17 @@ public class User {
     private String email;
     private String phoneNumber;
     private boolean haveReservedRoom;
+    private Room room;
+
+    public User(String name, String surname, int age, String email, String phoneNumber, boolean haveReservedRoom, Room room) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.haveReservedRoom = true;
+        this.room = room;
+    }
 
     public User(String name, String surname, int age, String email, String phoneNumber, boolean haveReservedRoom) {
         this.name = name;
@@ -63,5 +74,13 @@ public class User {
 
     public void setHaveReservedRoom(boolean haveReservedRoom) {
         this.haveReservedRoom = haveReservedRoom;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }

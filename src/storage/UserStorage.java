@@ -1,5 +1,6 @@
 package storage;
 
+import exception.HotelNotFoundException;
 import exception.UserNotFoundException;
 import model.ArmenianHotel;
 import model.User;
@@ -25,12 +26,23 @@ public class UserStorage {
         users = temp;
     }
 
-    public void deleteUserByName(String name) throws UserNotFoundException {
-        for (int i = 0; i < size; i++) {
+    public int findUser(String name) {
+        for (int i = 0; i < users.length; i++) {
             if (users[i].getName().equals(name)) {
-                users[i] = null;
-                size--;
+                return i;
             }
+        }
+        return -1;
+    }
+
+    public void deleteUserByName(String name) throws UserNotFoundException {
+        int user = findUser(name);
+        if (user != -1) {
+            users[user] = null;
+            size--;
+            System.out.println("Hotel deleted successfully");
+        } else {
+            throw new UserNotFoundException("User not found!");
         }
     }
 }

@@ -24,13 +24,24 @@ public class ArmenianHotelStorage {
         armenianHotels = temp;
     }
 
-    public void deleteHotelByName(String name) {
+    public int findHotel(String name) {
         for (int i = 0; i < armenianHotels.length; i++) {
             if (armenianHotels[i].getName().equals(name)) {
-                armenianHotels[i] = null;
+                return i;
             }
         }
-        System.out.println("Hotel deleted successfully");
+        return -1;
+    }
+
+    public void deleteHotelByName(String name) throws HotelNotFoundException {
+        int hotel = findHotel(name);
+        if (hotel != -1) {
+            armenianHotels[hotel] = null;
+            size--;
+            System.out.println("Hotel deleted successfully");
+        } else {
+            throw new HotelNotFoundException("Hotel not found!");
+        }
     }
 
     public void printAllHotels() {
@@ -42,20 +53,17 @@ public class ArmenianHotelStorage {
     }
 
     public void printHotelByName(String name) throws HotelNotFoundException {
-        for (int i = 0; i < armenianHotels.length; i++) {
-            if (!name.equals(armenianHotels[i].getName())) {
-                throw new HotelNotFoundException("Hotel with name " + name + " not found");
-            } else {
-                System.out.println(armenianHotels[i].toString());
-            }
+        int hotel = findHotel(name);
+        if (hotel != -1) {
+            System.out.println(armenianHotels[hotel].toString());
+        } else {
+            throw new HotelNotFoundException("Hotel not found!");
         }
     }
 
     public void printHotelsByStarsCount(int starsCount) throws HotelNotFoundException {
         for (int i = 0; i < armenianHotels.length; i++) {
-            if (!(armenianHotels[i].getStars() == starsCount)) {
-                throw new HotelNotFoundException("Hotel with " + starsCount + " stars not found");
-            } else {
+            if (armenianHotels[i].getStars() == starsCount) {
                 System.out.println(armenianHotels[i].toString());
             }
         }
@@ -63,9 +71,7 @@ public class ArmenianHotelStorage {
 
     public void printHotelByAddress(String address) throws HotelNotFoundException {
         for (int i = 0; i < armenianHotels.length; i++) {
-            if (!(address.equals(armenianHotels[i].getName()))) {
-                throw new HotelNotFoundException("Hotel with address " + address + " not found");
-            } else if (address.equals(armenianHotels[i].getAddress())) {
+            if (address.equals(armenianHotels[i].getAddress())) {
                 System.out.println(armenianHotels[i].toString());
             }
         }
